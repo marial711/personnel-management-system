@@ -4,26 +4,11 @@
 
 <!-- Declares style for table -->
 <style>
-    table{
+    table, th, tr, td{
         background-color:#DDEEFF;
         border:1px solid black;
         padding: 3px;
     }
-	th{
-		background-color:#DDEEFF;
-        border:1px solid black;
-        padding: 3px;
-	}
-	tr{
-		background-color:#DDEEFF;
-        border:1px solid black;
-        padding: 3px;
-	}
-	td{
-		background-color:#DDEEFF;
-        border:1px solid black;
-        padding: 3px;
-	}
 </style>
 
 <?php  

@@ -28,7 +28,6 @@
 
 
 <?php
-    echo "<a href='index.html'>Back to Home</a>";
     //Recieve variables from post
     $fullName = $_POST["fullName"];
     $photo = $_POST["image"];
@@ -74,10 +73,8 @@
     $query = "SELECT * from personnelInfo";
 
     $sth = mysqli_query($link, $query) or die("Query failed" .mysqli_connect_error());
-    
-    // $result = mysqli_fetch_array($sth);
 
-    //Print the current state of the table
+//Print the current state of the table
     echo "<table><tr><th>Full Name</th><th>Photos</th><th>Date Joined</th><th>Department</th><th>Project Involved</th><th>Annual Salary</th></tr>";
     if(numOfRows >= 0)
     {
@@ -102,6 +99,7 @@
     }
 echo "</table>";
 
-    // Close our MySQL Link
-    mysqli_close($link);
+// Close our MySQL Link
+mysqli_close($link);
+// header('location: index.html');
 ?>

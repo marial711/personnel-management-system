@@ -22,6 +22,7 @@
     </style>
 
 <?php
+    echo "<a href='index.html'><h3>Click to return home</h3></a>";
     $link = new mysqli("localhost:3306","root","root","project");
     if(mysqli_connect_error())
     {

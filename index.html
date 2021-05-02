@@ -3,28 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>(Insert Group Name)</title>
-    <style>
-          table{
-              background-color:#DDEEFF;
-              border:1px solid black;
-              padding: 3px;
-              }
-          th{
-              background-color:#DDEEFF;
-                  border:1px solid black;
-                  padding: 3px;
-            }
-          tr{
-              background-color:#DDEEFF;
-                  border:1px solid black;
-                  padding: 3px;
-            }
-          td{
-              background-color:#DDEEFF;
-                  border:1px solid black;
-                  padding: 3px;
-            }
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
   </head>
   <body>
     <header>
@@ -32,6 +11,12 @@
       		Date: 4/15/2021
       		Purpose: To provide user with a search field to query the data base for personnel information. This query will work for all fields in the personnel table-->
     </header>
+
+    <h3>View current personnel database</h3>
+    <form action="printTable.php" method="post">
+    <input type="submit" name="submit" value="Submit">
+    </form>
+    </br></br>
 
     <h3>Search</h3>
     <form action="search.php" method="post">
@@ -61,7 +46,6 @@
     </form>
     </br></br>
 
-    <?php require 'printTable.php'; ?>
    
     
     <!-- TODO

@@ -1,4 +1,5 @@
-<!--	Names: 	 Brian Hafey, Jacob Kalat, Maria Leyva
+<!--	Team Name: Halava
+		Names: 	 Brian Hafey, Jacob Kalat, Maria Leyva
       	Date: 	 4/15/2021
       	Purpose: To add a new employee to the database-->
 
@@ -28,7 +29,7 @@
 
 
 <?php
-    //Recieve variables from post
+    //Receive variables from post
     $fullName = $_POST["fullName"];
     $photo = $_POST["image"];
     $date = $_POST["dateJoined"];
@@ -48,7 +49,7 @@
     $numOfRows = mysqli_num_rows($result);
 
 
-    // selected and uploaded a file
+    // Selected and uploaded a file
     if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) 
     {
         // Temporary file name stored on the server
@@ -61,43 +62,13 @@
 
         $query = "INSERT INTO personnelInfo VALUES (NULL,'$fullName','$data','$date','$department','$project','$salary')";
         $result = mysqli_query($link, $query) or die("Query failed" .mysqli_connect_error());
-
         }
     else 
     {
-
         echo "No image selected/uploaded";
-
     }
 
-//     $query = "SELECT * from personnelInfo";
 
-//     $sth = mysqli_query($link, $query) or die("Query failed" .mysqli_connect_error());
-
-//     //Print the current state of the table
-//     echo "<table><tr><th>Full Name</th><th>Photos</th><th>Date Joined</th><th>Department</th><th>Project Involved</th><th>Annual Salary</th></tr>";
-//     if(numOfRows >= 0)
-//     {
-//         while($info = mysqli_fetch_assoc($sth))
-//         {
-//             echo "<tr>";
-//             foreach($info as $key=>$value)
-//             {
-//                 if($key == 'image')
-//                 {
-//                     echo "<td>";
-//                     echo '<img src="data:image/jpeg;base64,'.base64_encode($value).'" height="200" width="200"/>';
-//                     echo "</td>";
-//                 }
-//                 elseif($key != 'No')
-//                 {
-//                     echo "<td>$value</td>";
-//                 }
-//             }
-//             echo "</tr>";
-//         }
-//     }
-// echo "</table>";
 
 // Close our MySQL Link
 mysqli_close($link);

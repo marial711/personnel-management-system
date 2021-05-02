@@ -1,3 +1,9 @@
+<!--	Team Name: Halava
+		Names: 	 Brian Hafey, Jacob Kalat, Maria Leyva
+      	Date: 	 5/2/2021
+      	Purpose: To delete data from the table-->
+		
+<!-- Declares style for table -->
 <style>
     table{
         background-color:#DDEEFF;
@@ -28,8 +34,10 @@ if(mysqli_connect_error())
 {
         die("connection failed: ".mysqli_connect_error());
 }
+//Drop current table
 $query = "drop table personnelInfo;";
 $result = mysqli_query($link,$query);
+//Create new table with the same blueprint
 $query = "create table personnelInfo
     (No int(5) NOT NULL auto_increment,
     FullName char(50),
@@ -41,33 +49,6 @@ $query = "create table personnelInfo
     PRIMARY KEY(No));";
 $result = mysqli_query($link,$query);
 
-
-// $query = 'SELECT * from personnelInfo';
-// $sth = mysqli_query($link, $query) or die('Query failed' .mysqli_connect_error());
-// $numOfRows = mysqli_num_rows($sth);
-// echo '<table><tr><th>Full Name</th><th>Photos</th><th>Date Joined</th><th>Department</th><th>Project Involved</th><th>Annual Salary</th></tr>';
-// if(numOfRows >= 0)
-// {
-//     while($info = mysqli_fetch_assoc($sth))
-//     {
-//         echo '<tr>';
-//         foreach($info as $key=>$value)
-//         {
-//             if($key == 'image')
-//             {
-//                 echo '<td>';
-//                 echo '<img src="data:image/jpeg;base64,'.base64_encode($value).'" height="200" width="200"/>';
-//                 echo '</td>';
-//             }
-//             elseif($key != 'No')
-//             {
-//                 echo '<td>$value</td>';
-//             }
-//         }
-//     echo '</tr>';
-//     }
-// }
-// echo '</table>';
 mysqli_close($link);
 header('location: index.html');
 

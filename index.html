@@ -2,22 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>(Insert Group Name)</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <title>(Halava Main Page)</title>
+    <style>
+          table{
+              background-color:#DDEEFF;
+              border:1px solid black;
+              padding: 3px;
+              }
+          th{
+              background-color:#DDEEFF;
+                  border:1px solid black;
+                  padding: 3px;
+            }
+          tr{
+              background-color:#DDEEFF;
+                  border:1px solid black;
+                  padding: 3px;
+            }
+          td{
+              background-color:#DDEEFF;
+                  border:1px solid black;
+                  padding: 3px;
+            }
+    </style>
   </head>
   <body>
     <header>
-      <!--	Names: Brian Hafey, Jacob Kalat, Maria Leyva
-      		Date: 4/15/2021
-      		Purpose: To provide user with a search field to query the data base for personnel information. This query will work for all fields in the personnel table-->
+      <!--	Team Name: Halava
+			Names: Brian Hafey, Jacob Kalat, Maria Leyva
+      		Date: 5/2/2021 
+			Purpose: This is the Main Page for navigating the database. Allows user to search for data, querying all fields in the personnel table, add employee data, delete employee data, and start over with a new table entirely-->
     </header>
 
-    <h3>View current personnel database</h3>
-    <form action="printTable.php" method="post">
-    <input type="submit" name="submit" value="Submit">
-    </form>
-    </br></br>
-
+	<!--Takes a search query from the user and brings them to a search results page with all the data in a table format, where they can view the data and delete desired data afterwards-->
     <h3>Search</h3>
     <form action="search.php" method="post">
 		Search: <input type="text" name="search">
@@ -25,7 +42,14 @@
 		<input type="reset" name="reset" value="Reset">
 	  </form>
     </br></br>
+	
+	<!--Allows user to see entirety of the table-->
+	<h3>View full table</h3>
+	<form action="printTable.php" method="post">
+	<input type="submit" name="submit" value="Submit">
+	</form>
 
+	<!--Takes input from the user and adds it to the database into a row-->
     <h3>Add Employee</h3>
     <form enctype="multipart/form-data" action="addEmployee.php" method="post">
     Full Name: <input type="text" name="fullName"></br>
@@ -34,25 +58,80 @@
     Department: <input type="text" name="department"></br>
     Project Involved: <input type="text" name="projectInvolved"></br>
     Salary: <input type="text" name="salary"></br>
-
     <input type="submit" name="submit" value="Submit">
     <input type="reset" name="reset" value="Reset">
     </form>
     </br></br>
+	
+	<!--Receives input data in the text field, then prompts for a radio button selection, then deletes that row upon hitting Submit-->
+	<h3>Delete row from Table</h3>
+	<form action="deleteUser.php" method="post">
+	Enter the data you would like deleted: </br>
+	<input type="text" name="deletion"> </br>
+	<input type="radio" name="selection" value="FullName">Name
+	<input type="radio" name="selection" value="DateJoined">Date Joined
+	<input type="radio" name="selection" value="Department">Department
+	<input type="radio" name="selection" value="ProjectInvolved">Project Involved
+	<input type="radio" name="selection" value="annualSalary">Salary </br>
+	<input type="submit" name="submit" value="Submit">
+	<input type="reset" name="reset" value="Reset">
+	</form>
+	</br></br>
 
+  <h3>Modify Personnel Info</h3>
+  <form action="modifyData.php" method="post">
+    <input type="submit" name="submit" value="Submit">
+  </form>
+  </br></br>
+	<!--Drops the table currently in use and creates a fresh new one in its place-->
     <h3>Create new table</h3>
     <form action="newTable.php" method="post">
     <input type="submit" name="submit" value="Submit">
     </form>
     </br></br>
 
-   
-    
-    <!-- TODO
-    1. Add option to modify current table data
-    2. Add option to remove a row from the table data -->
 
-    
-     
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
